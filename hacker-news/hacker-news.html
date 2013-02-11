@@ -1,0 +1,22 @@
+<head>
+  <title>hacker-news</title>
+</head>
+
+<body>
+  <div>{{> navbar}} </div> 
+
+  <div>
+    {{renderPage}} 
+  </div>
+</body>
+
+<template name="navbar">
+  <h1>HACKER NEWS!</h1>
+  <ul class='nav_list'>
+    {{#each item}}
+      <a href="{{this.url}}">{{this.title}}</a> |  
+    {{/each}}
+    {{loginButtons}}
+  </ul>
+</template>
+

@@ -1,0 +1,34 @@
+
+<template name='home'>
+  {{> articleList}}
+</template>
+
+<template name="articleList">
+  <ul class='article_list'>
+    {{#each article}}
+      <li><a href='#' class='upvote' ><img width='20px' height='20px' src='2uparrow.png' /></a><a href="{{_id}}">{{title}}</a>: by {{this.author}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name='post'>
+  <div>{{mainLink}}</div>
+  <ul>
+    {{#each comment}}
+      <li>{{content}} : by {{author}}</li>
+    {{/each}}
+  </ul>
+  <form class='newComment'>
+    Comment : <input type ='text' class = 'comment' /><br />
+    <input type='submit'>
+  </form>
+</template>
+
+<template name='comments'>
+  <ul>
+    {{#each comment}}
+      <li>Posted{{created_at}}: {{content}}</li>
+    {{/each}}
+  </ul>
+</template>
+
